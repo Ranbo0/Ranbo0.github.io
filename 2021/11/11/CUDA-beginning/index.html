@@ -20,30 +20,33 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="摸鱼集团有限公司总裁">
-<meta property="og:type" content="website">
-<meta property="og:title" content="曹行宇的Blog">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="[toc] 〇、 什么是 CUDACUDA（Compute Unified Device Architecture），是显卡厂商 NVIDIA 推出的运算平台。 CUDA™是一种由NVIDIA推出的通用 并行计算 架构，该架构使 GPU 架构，该架构使 GPU 能够解决复杂的计算问题。 它包含了CUDA指令集架构（ISA）以及GPU内部的并行计算引擎。 开发人员可以使用C语言来为CUDA™架构编写">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CUDA beginning">
+<meta property="og:url" content="http://example.com/2021/11/11/CUDA-beginning/index.html">
 <meta property="og:site_name" content="曹行宇的Blog">
-<meta property="og:description" content="摸鱼集团有限公司总裁">
+<meta property="og:description" content="[toc] 〇、 什么是 CUDACUDA（Compute Unified Device Architecture），是显卡厂商 NVIDIA 推出的运算平台。 CUDA™是一种由NVIDIA推出的通用 并行计算 架构，该架构使 GPU 架构，该架构使 GPU 能够解决复杂的计算问题。 它包含了CUDA指令集架构（ISA）以及GPU内部的并行计算引擎。 开发人员可以使用C语言来为CUDA™架构编写">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-11T07:16:13.000Z">
+<meta property="article:modified_time" content="2021-11-11T08:51:40.085Z">
 <meta property="article:author" content="曹行宇">
+<meta property="article:tag" content="CUDA">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2021/11/11/CUDA-beginning/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>曹行宇的Blog</title>
+  <title>CUDA beginning | 曹行宇的Blog</title>
   
 
 
@@ -156,9 +159,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -174,10 +178,9 @@
       <meta itemprop="name" content="曹行宇的Blog">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/11/CUDA-beginning/" class="post-title-link" itemprop="url">CUDA beginning</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          CUDA beginning
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -200,6 +203,13 @@
             </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
   
   <span class="post-meta-item">
     
@@ -224,377 +234,69 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>[toc]</p>
+        <p>[toc]</p>
 <h1 id="〇、-什么是-CUDA"><a href="#〇、-什么是-CUDA" class="headerlink" title="〇、 什么是 CUDA"></a>〇、 什么是 <code>CUDA</code></h1><p><code>CUDA</code>（<code>Compute Unified Device Architecture</code>），是显卡厂商 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/NVIDIA"><code>NVIDIA</code></a> 推出的运算平台。 CUDA™是一种由NVIDIA推出的通用 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/113443">并行计算</a> 架构，该架构使 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/GPU"><code>GPU</code></a> 架构，该架构使 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/GPU"><code>GPU</code></a> 能够解决复杂的计算问题。 它包含了CUDA<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%8C%87%E4%BB%A4%E9%9B%86%E6%9E%B6%E6%9E%84">指令集架构</a>（<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/ISA"><code>ISA</code></a>）以及GPU内部的并行计算引擎。 开发人员可以使用<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/C%E8%AF%AD%E8%A8%80"><code>C</code>语言</a>来为<code>CUDA™</code>架构编写程序，所编写出的程序可以在支持<code>CUDA™</code>的处理器上以超高性能运行。</p>
 <hr>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/11/11/CUDA-beginning/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+<span id="more"></span>
+
+<h1 id="一、-引言"><a href="#一、-引言" class="headerlink" title="一、 引言"></a>一、 引言</h1><h2 id="1-1-GPU-的诞生"><a href="#1-1-GPU-的诞生" class="headerlink" title="1.1 GPU 的诞生"></a>1.1 <code>GPU</code> 的诞生</h2><p>​    <code>CPU</code>的计算速度无法满足需求，大部分坐标处理工作及光影特效需要 <code>CPU</code> 亲自完成，占用太多运算时间，造成整体画面不能流畅的表现出来。随着时间的推移，<code>CPU</code> 进行各种光影计算的速度变得越来越无法满足游戏开发商的需求，更多特效的应用也几乎榨干了 <code>CPU</code> 的性能，因此，矛盾产生了，<code>GPU</code> 应运而生。</p>
+<h2 id="1-2-GPU-概述"><a href="#1-2-GPU-概述" class="headerlink" title="1.2 GPU 概述"></a>1.2 <code>GPU</code> 概述</h2><p><code>GPU</code>（<code>Graphics Processing Unit</code>）是一种特殊类型的处理器，具有数百或数千个内核，可并行运行大量计算。<code>GPU</code>是一种专门在<code>PC</code>，游戏机，手机等设备上上运行绘图运算工作的<a target="_blank" rel="noopener" href="https://baike.hk.xileso.top/baike-%E5%BE%AE%E8%99%95%E7%90%86%E5%99%A8">微处理器</a>。虽然<code>GPU</code>在游戏中以<a target="_blank" rel="noopener" href="https://baike.hk.xileso.top/baike-3D%E6%B8%B2%E6%9F%93">3D</a><a target="_blank" rel="noopener" href="https://baike.hk.xileso.top/baike-3D%E6%B8%B2%E6%9F%93">渲染</a>而闻名，但它们对运行分析、<a target="_blank" rel="noopener" href="https://baike.hk.xileso.top/baike-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0">深度学习</a>和<a target="_blank" rel="noopener" href="https://baike.hk.xileso.top/baike-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0">机器学习</a>算法尤其有用。GPU允许某些计算比传统CPU上运行相同的计算速度快<code>10</code>倍至<code>100</code>倍。</p>
+<h2 id="1-3-CUDA-产生"><a href="#1-3-CUDA-产生" class="headerlink" title="1.3 CUDA 产生"></a>1.3 <code>CUDA</code> 产生</h2><p><code>GPU</code>的高效在于可以高度并行处理。 以两个向量相加为例，<code>CPU</code>可能采取循环处理，每个循环对一个分量做加法。<code>GPU</code>则可以开多个线程，每个线程同时对一个分量做加法。<code>CPU</code>加法的速度一般快于<code>GPU</code>，但因为<code>GPU</code>可以同时开大量线程并行跑，因此更加高效。</p>
+<p>为了降低<code>GPU</code>程序的开发难度，<code>NVIDIA</code>推出了 <code>CUDA</code>（<code>Compute Unified Device Architecture</code>，统一计算设备架构）这一编程模型。</p>
+<h2 id="1-4-CPU-和-GPU-模型对比"><a href="#1-4-CPU-和-GPU-模型对比" class="headerlink" title="1.4 CPU 和 GPU 模型对比"></a>1.4 <code>CPU</code> 和 <code>GPU</code> 模型对比</h2><h3 id="1-4-1-CPU-架构"><a href="#1-4-1-CPU-架构" class="headerlink" title="1.4.1 CPU 架构"></a>1.4.1 <code>CPU</code> 架构</h3><p>![](CPU Arch.png)</p>
+<p><code>CPU</code>（<code>Central Processing Unit</code>, 中央处理器）：<code>CPU</code>的结构主要包括运算器（<code>ALU</code>, <code>Arithmetic and Logic Unit</code>）、控制单元（<code>CU</code>, <code>Control Unit</code>）、寄存器（<code>Register</code>）、高速缓存器（<code>Cache</code>）等。简单来说就是<strong>计算单元，控制单元，存储单元</strong>。<strong>计算能力</strong>是CPU的很小的一部分功能。</p>
+<ul>
+<li><p><code>ALU</code> — 运算单元</p>
+</li>
+<li><p><code>Control</code> — 控制单元</p>
+</li>
+<li><p><code>Cache</code> — 高速缓存（<code>CPU</code>和内存之间的中介桥梁），进行高速数据交换的存储器</p>
+</li>
+<li><p><code>DRAM </code>— 进行短暂存储的存储器，易失性存储器（电源开启时数据存在，断开电源数据消失）</p>
+</li>
+</ul>
+<p>可以看出**<code>CPU</code>是基于低延迟设计<strong>的。因为它有</strong>特别大的缓存空间可以降低延时**，可以保存较多数据在缓存里面，当需要访问的这些数据时，只要在之前访问过的，现在直接在缓存里面取即可。</p>
+<p>此外，<code>CPU</code>具有复杂的控制单元。例如当程序含有多个分支的时候，它可以通过提供分支预测的能力来降低延时。再比如在数据转发时，当一些指令依赖前面的指令结果时，数据转发的逻辑控制单元决定这些指令在<code>pipeline</code>中的位置并且尽可能快的转发一个指令的结果给后续的指令。这些动作需要很多的对比电路单元和转发电路单元。</p>
+<p>因为<code>CPU</code>的架构中需要大量的空间去放置存储单元和控制单元，相比之下计算单元只占据了很小的一部分，所以它在大规模并行计算能力上极受限制，而更擅长于逻辑控制。</p>
+<h3 id="1-4-2-GPU-架构"><a href="#1-4-2-GPU-架构" class="headerlink" title="1.4.2 GPU 架构"></a>1.4.2 <code>GPU</code> 架构</h3><p>![](GPU Arch.png)</p>
+<p><code>GPU</code>的结构里有大量的<code>ALU</code>（计算单元）单元和很少的<code>Cache</code>（缓存）。</p>
+<p><code>GPU</code>的<code>Cache</code>不是像<code>CPU</code>那样保存后面需要访问的数据的，它是为<code>thread</code>（线程）提供服务的。如果有很多线程需要访问同一个相同的数据，缓存会合并这些访问，然后再去访问<code>dram</code>（因为需要访问的数据保存在<code>dram</code>中而不是<code>cache</code>里面），获取数据后<code>cache</code>会转发这个数据给对应的线程，这个时候<code>Cache</code>是作为数据转发的角色。但是由于需要访问<code>dram</code>，自然会带来延时的问题。</p>
+<p><code>GPU</code>的工作大部分都计算量大，但没什么技术含量，而且要<strong>重复很多很多次</strong>。也就是说，<code>GPU</code>是用很多简单的计算单元去完成大量的计算任务，纯粹的人海战术。所以<code>GPU</code>的计算特点就是<strong>超长的流水线</strong>和<strong>并行计算</strong>。显然，<code>GPU</code>是基于高吞吐量设计的。</p>
+
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/CUDA/" rel="tag"># CUDA</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/11/octopath/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="曹行宇">
-      <meta itemprop="description" content="摸鱼集团有限公司总裁">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="曹行宇的Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/11/octopath/" class="post-title-link" itemprop="url">八方旅人 -- 壁纸 (1920×1080)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-11-11 12:53:38 / 修改时间：13:07:30" itemprop="dateCreated datePublished" datetime="2021-11-11T12:53:38+08:00">2021-11-11</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/OCTOPATH/" itemprop="url" rel="index"><span itemprop="name">OCTOPATH</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/11/11/octopath/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/11/11/octopath/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><code>Alpyn</code></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/11/11/octopath/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/10/galois/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="曹行宇">
-      <meta itemprop="description" content="摸鱼集团有限公司总裁">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="曹行宇的Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/10/galois/" class="post-title-link" itemprop="url">JErasure库的相关介绍</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-11-10 16:20:25 / 修改时间：17:15:45" itemprop="dateCreated datePublished" datetime="2021-11-10T16:20:25+08:00">2021-11-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JErasure/" itemprop="url" rel="index"><span itemprop="name">JErasure</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/11/10/galois/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/11/10/galois/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>JErasure库提供一般的RS码和CRS码两种编码方式，是基于C的纠删码的类库。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/11/10/galois/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/11/octopath/" rel="prev" title="八方旅人 -- 壁纸 (1920×1080)">
+      <i class="fa fa-chevron-left"></i> 八方旅人 -- 壁纸 (1920×1080)
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/09/blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="曹行宇">
-      <meta itemprop="description" content="摸鱼集团有限公司总裁">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="曹行宇的Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/09/blog/" class="post-title-link" itemprop="url">用github搭建博客巨无敌详细教程</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-11-09 15:38:04 / 修改时间：20:48:31" itemprop="dateCreated datePublished" datetime="2021-11-09T15:38:04+08:00">2021-11-09</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/11/09/blog/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/11/09/blog/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="一、-环境准备"><a href="#一、-环境准备" class="headerlink" title="一、 环境准备"></a>一、 环境准备</h1><h2 id="1-git"><a href="#1-git" class="headerlink" title="1. git"></a>1. <code>git</code></h2><p>$\text{link:}$ </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://git-scm.com/</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/11/09/blog/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/11/09/first%20blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="曹行宇">
-      <meta itemprop="description" content="摸鱼集团有限公司总裁">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="曹行宇的Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/09/first%20blog/" class="post-title-link" itemprop="url">my first blog</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-11-09 15:10:25 / 修改时间：15:11:03" itemprop="dateCreated datePublished" datetime="2021-11-09T15:10:25+08:00">2021-11-09</time>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/11/09/first%20blog/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/11/09/first%20blog/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>我的第一个博客。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/11/09/first%20blog/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -641,6 +343,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E3%80%87%E3%80%81-%E4%BB%80%E4%B9%88%E6%98%AF-CUDA"><span class="nav-number">1.</span> <span class="nav-text">〇、 什么是 CUDA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81-%E5%BC%95%E8%A8%80"><span class="nav-number">2.</span> <span class="nav-text">一、 引言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-GPU-%E7%9A%84%E8%AF%9E%E7%94%9F"><span class="nav-number">2.1.</span> <span class="nav-text">1.1 GPU 的诞生</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-GPU-%E6%A6%82%E8%BF%B0"><span class="nav-number">2.2.</span> <span class="nav-text">1.2 GPU 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-CUDA-%E4%BA%A7%E7%94%9F"><span class="nav-number">2.3.</span> <span class="nav-text">1.3 CUDA 产生</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-CPU-%E5%92%8C-GPU-%E6%A8%A1%E5%9E%8B%E5%AF%B9%E6%AF%94"><span class="nav-number">2.4.</span> <span class="nav-text">1.4 CPU 和 GPU 模型对比</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-1-CPU-%E6%9E%B6%E6%9E%84"><span class="nav-number">2.4.1.</span> <span class="nav-text">1.4.1 CPU 架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-2-GPU-%E6%9E%B6%E6%9E%84"><span class="nav-number">2.4.2.</span> <span class="nav-text">1.4.2 GPU 架构</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
